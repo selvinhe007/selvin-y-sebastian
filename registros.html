@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro | Kick House</title>
+    <!-- Fuente moderna -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* RESET Y BASE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Fondo oscuro con el mismo estilo de Kick Zone */
+            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
+                        url('fondo.png'); /* Asegúrate de tener esta imagen */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-color: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        /* NAVEGACIÓN */
+        nav {
+            background: rgba(0, 0, 0, 0.5);
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 255, 0, 0.2);
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #00ff00;
+            text-shadow: 0 0 10px #00ff00;
+        }
+
+        /* TITULO */
+        h1 {
+            margin-top: 50px;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 700;
+            text-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
+        }
+
+        h1 span {
+            color: #00ff00;
+        }
+
+        /* TARJETA DE REGISTRO (Glassmorphism) */
+        .card {
+            background: rgba(20, 20, 20, 0.7);
+            backdrop-filter: blur(15px);
+            padding: 40px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 450px;
+            border: 1px solid rgba(0, 255, 0, 0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            margin: 30px 0;
+        }
+
+        /* FORMULARIO */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        label {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #00ff00;
+            font-weight: 600;
+            margin-left: 5px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 14px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: #666;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #00ff00;
+            background: rgba(0, 255, 0, 0.05);
+            box-shadow: 0 0 12px rgba(0, 255, 0, 0.2);
+        }
+
+        textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        /* BOTONES */
+        button {
+            padding: 15px;
+            border-radius: 12px;
+            border: none;
+            background: #00ff00;
+            color: #000;
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s ease;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #00cc00;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 255, 0, 0.3);
+        }
+
+        .boton-volver {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #888;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .boton-volver:hover {
+            color: #fff;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            .card { padding: 25px; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html">INICIO</a>
+        <a href="productos.html">PRODUCTOS</a>
+    </nav>
+
+    <h1>Ayuda <span>Kick Zone</span></h1>
+
+    <div class="card">
+        <form action="https://formspree.io/f/mqewqqpj" method="POST">
+            <input type="hidden" name="_subject" value="Nuevo contacto verificado">
+            <input type="hidden" name="_captcha" value="false">
+
+            <div>
+                <label>Nombre Completo</label>
+                <input type="text" name="name" placeholder="Ej. Juan Pérez" required>
+            </div>
+
+            <div>
+                <label>Correo Electrónico</label>
+                <input type="email" name="email" placeholder="tu@email.com" required>
+            </div>
+
+            <div>
+                <label>¿En qué podemos ayudarte?</label>
+                <textarea name="message" placeholder="Escribe el nombre del producto que quieres" required></textarea>
+            </div>
+
+            <button type="submit">Enviar Mensaje</button>
+        </form>
+
+        <a href="index.html" class="boton-volver">← Volver al Inicio</a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #0b0b0b;
+    color: white;
+    scroll-behavior: smooth;
+}
+.info h3 {
+    color: #08fa14; /* Verde neón para el título */
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.info p {
+    color: #cecccc; /* Blanco para la descripción */
+    font-size: 0.9rem;
+    opacity: 0.8;   /* Para que se vea un poco más elegante */
+}
+
+.producto img {
+    width: 100%;             /* Que ocupe el ancho del cuadro negro */
+    height: 250px;           /* Altura fija para que todas las tarjetas sean iguales */
+    object-fit: contain;     /* ¡ESTO ES CLAVE! Evita que se pixele al no estirarla */
+    padding: 15px;           /* Espacio para que el zapato respire */
+    background-color: #1a1a1a; /* Fondo oscuro que combina con tu web */
+    
+    /* Mejora el renderizado en fotos JPG/PNG */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    transition: 0.1s;
+}
+
+/* Efecto para que se note que es clickeable */
+.producto:hover img {
+    transform: scale(1.09);
+    filter: brightness(1.2);
+}
+/* NAVBAR */
+.menu-productos {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 5%;
+    background: rgba(12, 12, 12, 0.8);
+    backdrop-filter: blur(10px);
+    position: static;
+    top: 0;
+    z-index: 100;
+    border-bottom: 20px solid rgba(6, 210, 224, 0.2);
+}
+
+.menu-productos a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+
+/* HEADER */
+.header-marca {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.header-marca h1 {
+    font-size: 3rem;
+    letter-spacing: 5px;
+}
+
+.header-marca h1 span {
+    color: #00ff00;
+}
+
+/* PRODUCTOS */
+.titulo-seccion {
+    text-align: center;
+    margin: 40px 0;
+    text-transform: uppercase;
+    color: #00ff00;
+}
+
+.contenedor-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 0 5% 50px;
+}
+
+.producto {
+    background: #1a1a1a;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.4s;
+    border: 1px solid #333;
+}
+
+.tarjeta-link {
+    text-decoration: none;
+    color: inherit;
+    display: block; /* IMPORTANTE: Hace que todo el cuadro sea clickeable */
+}
+
+.producto img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: 0.4s;
+}
+
+.info {
+    padding: 20px;
+    text-align: center;
+}
+
+.producto:hover {
+    transform: translateY(-10px);
+    border-color: #08fa14;
+    box-shadow: 0 10px 30px rgba(8, 250, 20, 0.2);
+}
+
+.producto:hover img {
+    filter: brightness(1.1);
+}
+
+footer {
+    text-align: center;
+    padding: 50px;
+}
+
+.volver-inicio {
+    color: #666;
+    text-decoration: none;
+}
+
+.volver-inicio:hover {
+    color: white;
+}
