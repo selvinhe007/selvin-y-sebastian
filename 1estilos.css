@@ -1,115 +1,81 @@
-
-
-/* CONFIGURACIÓN GENERAL */
+/* 1. FONDO Y ESTRUCTURA */
 body {
     margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('fondo.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-color: #000000;
+    font-family: sans-serif;
+    background: linear-gradient(#000c, #000c), url('fondo.png') center/cover fixed;
     color: white;
     text-align: center;
 }
 
-
-h1 strong {
-    color: #04eb2b; /* El color verde neón */
-    text-shadow: 0 0 15px rgba(6, 250, 47, 0.7); /* El brillo neón */
-    text-transform: uppercase; /* Opcional: para que todo sea en mayúsculas */
-}
-
-h1 {
-    margin-top: 80px;
-    font-size: 3.5rem;
-    letter-spacing: 6px;
-    text-transform: uppercase;
-    text-shadow: 0 0 20px rgba(8, 214, 18, 0.6);
-}
-
-/* BOTÓN VOLVER AL INICIO */
+/* 2. BOTÓN INICIO (Arriba a la izquierda como en la foto) */
 .btn-volver-inicio {
-    position: absolute;
+    position: fixed; /* Para que siempre esté visible al bajar */
     top: 20px;
     left: 20px;
+    background: #fff;
     color: #000;
-    text-decoration: none;
-    font-size: 0.8rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-    border-radius: 50px; /* Botón más redondeado */
     padding: 10px 20px;
-    transition: 0.3s;
-    background: #ffffff;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.8rem;
+    z-index: 1000;
 }
-
-
-/* CONTENEDOR DE LAS MARCAS */
+/* 3. TÍTULO KICK ZONE */
+h1 {
+    margin-top: 80px;
+    color: #0ef10e;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+}
+/* 4. CONTENEDOR DE TARJETAS */
 .contenedor-marcas {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 30px;
-    margin-top: 40px;
+    gap: 20px;
     padding: 40px;
 }
-
-/* ESTILO DE LA TARJETA (ESTILO TICKET) */
+/* 5. TARJETAS (ESTILO TICKET) */
 .cuadro {
-    position: relative;
-    width: 260px; /* Más estrecho */
-    height: 420px; /* Más alto */
-    background-color: rgba(255, 255, 255, 0.05); 
-    border-radius: 50px; /* Bordes muy curvos */
+    width: 260px;
+    height: 430px;
+    border: 1px solid #00ff00;
+    border-radius: 50px;
     overflow: hidden;
-    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-    background-size: 100%; /* Tamaño inicial de la foto */
+    background-color: #fff; /* Fondo blanco para que el logo resalte */
+    background-size: 80%; /* Ajusta el logo para que no se acerque a los bordes */
     background-position: center;
     background-repeat: no-repeat;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+    transition: 0.4s;
+    position: relative;
 }
 
-
-
-/* ENLACE Y TEXTO QUE APARECE */
 .cuadro a {
-    position: absolute;
-    top: 0;
-    left: 0;
+    display: block; /* Ocupa todo el espacio */
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: flex-end; /* Alinea el texto abajo */
-    justify-content: center;
     text-decoration: none;
-    z-index: 10;
 }
-
+/* 6. EFECTO HOVER */
 .cuadro span {
-    margin-bottom: -40px; /* Escondido abajo */
-    color: #00ff00;
-    font-weight: bold;
-    font-size: 1.2rem;
-    letter-spacing: 2px;
-    background: rgba(17, 6, 7, 0.8);
+    position: absolute;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    padding: 20px 0;
-    transition: 0.6s;
-    opacity: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: #00ff37;
+    padding: 15px 0;
+    transform: translateY(100%);
+    transition: 0.4s;
 }
-
 .cuadro:hover span {
-    margin-bottom: 0; /* Aparece al subir */
-    opacity: 100;
+    transform: translateY(0);
 }
 
-/* IMÁGENES DE FONDO */
+/* 7. ASIGNACIÓN DE IMÁGENES */
 .marca-adidas { background-image: url('adidas.png'); }
 .marca-nike { background-image: url('Nike.png'); }
 .marca-puma { background-image: url('Puma.png'); }
 .marca-nb { background-image: url('NW.png'); }
- 
-

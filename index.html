@@ -12,7 +12,15 @@
     <header>
         <nav>
             <div class="logo">KICK <span>ZONE</span></div>
-            <ul>
+            
+            <!-- Botón Hamburguesa -->
+            <button class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <ul class="nav-menu">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="productos.html">Productos</a></li>
                 <li><a href="registros.html">Contacto</a></li>
@@ -35,5 +43,15 @@
         <p>&copy; 2026 Kick Zone - Estilo sin límites.</p>
     </footer>
 
+    <!-- Script de JavaScript directamente en el HTML para que sea más fácil -->
+    <script>
+        const menu = document.querySelector('#mobile-menu');
+        const menuLinks = document.querySelector('.nav-menu');
+
+        menu.addEventListener('click', function() {
+            menu.classList.toggle('is-active'); // Anima el botón
+            menuLinks.classList.toggle('active'); // Muestra el menú
+        });
+    </script>
 </body>
 </html>

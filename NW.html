@@ -5,13 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Balance | Kick House</title>
     <link rel="stylesheet" href="2estilos.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <nav class="menu-productos">
         <a href="productos.html" class="nav-left">← PRODUCTOS</a>
-        <div class="nav-right">
+        
+        <!-- BOTÓN HAMBURGUESA AGREGADO -->
+        <button class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="nav-right" id="nav-menu">
             <a href="#futbol">FÚTBOL</a>
             <a href="#casual">CASUAL</a>
         </div>
@@ -31,6 +38,7 @@
                     <div class="info">
                         <h3>NB Furon</h3> 
                         <p>Potencia y velocidad para el gol.</p>
+                        <p class="codigo">codigo: 1010</p>
                     </div>
                 </a>
             </div>
@@ -41,39 +49,40 @@
                     <div class="info">
                         <h3>NB 442</h3>
                         <p>Cuero premium y toque clásico.</p>
+                        <p class="codigo">codigo: 1020</p>
                     </div>
                 </a>
             </div>
 
-            <!-- Nuevo Fútbol 1 -->
             <div class="producto">
                 <a href="registros.html" class="tarjeta-link">
                     <img src="img/tekela.jpg" alt="NB Tekela">
                     <div class="info">
                         <h3>NB Tekela</h3>
                         <p>Visión de juego y agilidad pura.</p>
+                        <p class="codigo">codigo: 1030</p>
                     </div>
                 </a>
             </div>
 
-            <!-- Nuevo Fútbol 2 -->
             <div class="producto">
                 <a href="registros.html" class="tarjeta-link">
-                    <img src="img/v360.jpg" alt="NB V360">
+                    <img src="img/v369.jpg" alt="NB V360">
                     <div class="info">
                         <h3>NB V360</h3>
                         <p>Estabilidad total en cada giro.</p>
+                        <p class="codigo">codigo: 1040</p>
                     </div>
                 </a>
             </div>
 
-            <!-- Nuevo Fútbol 3 -->
             <div class="producto">
                 <a href="registros.html" class="tarjeta-link">
                     <img src="img/audazo.jpg" alt="NB Audazo">
                     <div class="info">
                         <h3>NB Audazo</h3>
                         <p>Dominio total para el fútbol sala.</p>
+                        <p class="codigo">codigo: 1050</p>
                     </div>
                 </a>
             </div>
@@ -93,6 +102,7 @@
                     <div class="info">
                         <h3>New Balance 550</h3>
                         <p>Retro running con un toque moderno.</p>
+                        <p class="codigo">codigo: 3910</p>
                     </div>
                 </a>
             </div>
@@ -103,39 +113,40 @@
                     <div class="info">
                         <h3>NB 2002R</h3>
                         <p>Confort técnico y estética premium.</p>
+                        <p class="codigo">codigo: 3920</p>
                     </div>
                 </a>
             </div>
 
-            <!-- Nuevo Casual 1 -->
             <div class="producto">
                 <a href="registros.html" class="tarjeta-link">
-                    <img src="img/nb9060.jpg" alt="NB 9060">
+                    <img src="img/9060.jpg" alt="NB 9060">
                     <div class="info">
                         <h3>NB 9060</h3>
                         <p>Diseño futurista y comodidad máxima.</p>
+                        <p class="codigo">codigo: 3930</p>
                     </div>
                 </a>
             </div>
 
-            <!-- Nuevo Casual 2 -->
             <div class="producto">
                 <a href="registros.html" class="tarjeta-link">
-                    <img src="img/nb530.jpg" alt="NB 530">
+                    <img src="img/530.jpg" alt="NB 530">
                     <div class="info">
                         <h3>NB 530</h3>
                         <p>El regreso del estilo "dad shoe" de los 2000.</p>
+                        <p class="codigo">codigo: 3940</p>
                     </div>
                 </a>
             </div>
 
-            <!-- Nuevo Casual 3 -->
             <div class="producto">
                 <a href="registros.html" class="tarjeta-link">
-                    <img src="img/nb327.jpg" alt="NB 327">
+                    <img src="img/327.jpg" alt="NB 327">
                     <div class="info">
                         <h3>NB 327</h3>
                         <p>Inspiración de los 70 con una suela audaz.</p>
+                        <p class="codigo">codigo: 3950</p>
                     </div>
                 </a>
             </div>
@@ -146,6 +157,24 @@
     <footer>
         <a href="index.html" class="volver-inicio">← VOLVER AL INICIO</a>
     </footer>
+
+    <!-- SCRIPT PARA EL MENÚ (Consistente en todas las páginas) -->
+    <script>
+        const menuToggle = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('is-active');
+        });
+
+        // Cerrar menú al hacer clic en una opción
+        document.querySelectorAll('.nav-right a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
 
 </body>
 </html>

@@ -1,99 +1,114 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+/* --- 1. RESET Y BASE --- */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Arial', sans-serif; 
 }
 
-body {
-    background-color: #000;
-    color: white;
-    overflow: hidden; /* Evita que se pueda bajar si solo quieres la presentación */
+body { 
+    background: #000; 
+    color: #fff; 
+    overflow-x: hidden; 
 }
 
+/* --- 2. HEADER Y NAVEGACIÓN --- */
 header {
-    background: rgba(0, 0, 0, 0.8);
-    padding: 1.5rem 5%;
-    position: absolute;
-    width: 100%;
-    z-index: 10;
+    background: #000;
+    position: fixed;
+    inset: 0 0 auto; /* Pega el header arriba */
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    border-bottom: 1px solid #1a1a1a;
+    z-index: 1000;
 }
 
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Logo a la izquierda, Menú a la derecha */
     align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
+.logo { font-weight: bold; font-size: 1.5rem; letter-spacing: 2px; }
+.logo span { color: #00ff00; }
 
-.logo span {
-    color: #00ff00;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-}
-
-nav ul li {
-    margin-left: 30px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
+.nav-menu { display: flex; list-style: none; gap: 30px; }
+.nav-menu a { 
+    color: #fff; 
+    text-decoration: none; 
+    font-weight: bold; 
+    font-size: 0.9rem; 
     text-transform: uppercase;
-    font-size: 0.9rem;
 }
 
+/* --- 3. MENÚ HAMBURGUESA --- */
+.menu-toggle {
+    display: none; /* Oculto en computadoras */
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background: #00ff00;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+/* --- 4. HERO SECTION (Imagen con filtro oscuro) --- */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(43, 41, 41, 0.7)), /* Degradado oscuro para que el texto resalte */
-                url('fondo.png') no-repeat center center/cover;
+    background: linear-gradient(#000c, #000c), url('fondo.png') center/cover fixed;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: white;
+    padding: 0 20px;
 }
 
-.hero-content h1 {
-    font-size: 4rem;
-    margin-bottom: 15px;
-}
+.hero h1 { font-size: 3.5rem; text-transform: uppercase; margin-bottom: 10px; }
+.hero p { font-size: 1.1rem; color: #ccc; margin-bottom: 30px; }
 
-.cta-box {
-    margin-top: 30px;
-    padding: 30px;
-    border: 2px solid #00ff00;
-    display: inline-block;
-    border-radius: 15px;
-    background: rgba(0, 255, 0, 0.05);
-}
-
+/* --- 5. BOTÓN PRINCIPAL --- */
 .btn-main {
     background: #00ff00;
     color: #000;
-    padding: 20px 50px;
+    padding: 15px 40px;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.4rem;
-    border-radius: 8px;
+    border-radius: 12px;
     transition: 0.3s;
-    display: inline-block;
 }
 
+.btn-main:hover { transform: scale(1.05); background: #9ef5aa; }
 
-footer {
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
-    text-align: center;
-    color: #9e8787;
-    font-size: 0.8rem;
+/* --- 6. RESPONSIVE (Celulares) --- */
+@media (max-width: 850px) {
+    .menu-toggle { display: flex; } /* Aparece la hamburguesa */
+
+    .nav-menu {
+        position: fixed;
+        left: -100%; /* Escondido a la izquierda */
+        top: 70px;
+        flex-direction: column;
+        background: #000;
+        width: 100%;
+        height: 100vh;
+        padding-top: 50px;
+        transition: 0.4s;
+        align-items: center;
+    }
+
+    .nav-menu.active { left: 0; } /* Se muestra al hacer clic */
+    
+    .hero h1 { font-size: 2.2rem; }
 }
